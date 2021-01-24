@@ -1,6 +1,4 @@
 const express = require('express');
-
-const authMiddleware = require('../middlewares/auth');
 const {
   create,login,getAll,editOne,getById,
 } = require('../controllers/user');
@@ -56,7 +54,7 @@ router.get('/:id', async (req, res, next) => {
 
 //600c2ad38b04ef385067bc92
 
-router.post('/follow/:id',authMiddleware, async (req, res, next) => {
+router.post('/follow/:id', async (req, res, next) => {
   try {
     const usr1=await getById(req.params.id);
     const usr2=req.user;
@@ -70,7 +68,7 @@ router.post('/follow/:id',authMiddleware, async (req, res, next) => {
   }
 });
 
-router.post('/unfollow/:id',authMiddleware, async (req, res, next) => {
+router.post('/unfollow/:id', async (req, res, next) => {
   try {
     const usr1=await getById(req.params.id);
     const usr2=req.user;
