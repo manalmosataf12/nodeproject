@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm"
   },
-  "author": "Omran",
+  "author": "manal",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -15,6 +16,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.10"
   },
+  	"engines": {
+    	        "node": "14.15.3"
+    	    },
   "devDependencies": {
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.1",
